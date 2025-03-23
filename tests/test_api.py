@@ -1,5 +1,6 @@
 import json
 
+
 def test_health(client):
     res = client.get("/health")
     assert res.status_code == 200
@@ -49,6 +50,7 @@ def test_post_picture(picture, client):
     assert res.status_code == 201
     assert res.json['id'] == picture['id']
     res = client.get("/count")
+    print(res.json['length'])
     assert res.status_code == 200
     assert res.json['length'] == 11
 

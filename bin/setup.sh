@@ -20,9 +20,9 @@ echo 'export PS1="\[\e]0;\u:\W\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32
 echo "source ~/venv/bin/activate" >> ~/.bashrc
 
 echo "Installing Python dependencies..."
-source ~/venv/bin/activate && python3.9 -m pip install --upgrade pip wheel
-source ~/venv/bin/activate && pip install -r requirements.txt
-source ~/venv/bin/activate && pip install pytest  # Add this line for pytest
+source ../.ibm-venv/bin/activate && python3 -m pip install --upgrade pip wheel
+source ../.ibm-venv/bin/activate && pip install -r requirements.txt
+source ../.ibm-venv/bin/activate && pip install pytest  # Add this line for pytest
 
 echo "Starting the Postgres Docker container..."
 make db
